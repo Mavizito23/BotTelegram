@@ -1,0 +1,28 @@
+name: Enviar Flashcard Diario
+
+on:
+  schedule:
+    # 0 14 * * * significa 14:00 UTC (8:00 AM en Ciudad de México, CST)
+    - cron: '0 14 * * *'
+  workflow_dispatch: # Esto permite ejecutarlo manualmente para probar desde GitHub
+
+jobs:
+  run-bot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout del código
+        uses: actions/checkout@v3
+
+      - name: Configurar Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Instalar dependencias
+        run: pip install requests
+
+      - name: Ejecutar el bot
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python bot.py
