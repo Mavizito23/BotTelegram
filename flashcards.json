@@ -62,5 +62,61 @@
   {
     "q": "Teorema Central del Límite (TCL)",
     "a": "La suma de n variables i.i.d. converge a una Normal(μ, σ^2/n) cuando n → ∞"
+  },
+  {
+    "q": "PMF Binomial B(n,p)",
+    "a": "P(X=k) = \\binom{n}{k} p^k (1-p)^{n-k}"
+  },
+  {
+    "q": "Esperanza y Varianza Binomial",
+    "a": "E[X] = np; Var(X) = np(1-p)"
+  },
+  {
+    "q": "PMF Poisson P(λ)",
+    "a": "P(X=k) = \\frac{e^{-\\lambda} \\lambda^k}{k!}"
+  },
+  {
+    "q": "Esperanza y Varianza Poisson",
+    "a": "E[X] = \\lambda; Var(X) = \\lambda"
+  },
+  {
+    "q": "PMF Geométrica G(p)",
+    "a": "P(X=k) = (1-p)^{k-1} p"
+  },
+  {
+    "q": "Esperanza y Varianza Geométrica",
+    "a": "E[X] = 1/p; Var(X) = (1-p)/p^2"
+  },
+  {
+    "q": "PDF Uniforme Continua U(a,b)",
+    "a": "f(x) = 1/(b-a) para a < x < b"
+  },
+  {
+    "q": "Esperanza y Varianza Uniforme",
+    "a": "E[X] = (a+b)/2; Var(X) = (b-a)^2 / 12"
+  },
+  {
+    "q": "PDF Exponencial Exp(λ)",
+    "a": "f(x) = \\lambda e^{-\\lambda x} para x > 0"
+  },
+  {
+    "q": "Esperanza y Varianza Exponencial",
+    "a": "E[X] = 1/\\lambda; Var(X) = 1/\\lambda^2"
+  },
+  {
+    "q": "PDF Normal N(μ, σ²)",
+    "a": "f(x) = \\frac{1}{\\sqrt{2\\pi\\sigma^2}} e^{-\\frac{(x-\\mu)^2}{2\\sigma^2}}"
+  },
+  {
+    "q": "Esperanza y Varianza Normal",
+    "a": "E[X] = \\mu; Var(X) = \\sigma^2"
+  },
+  {
+    "q": "PMF Hipergeométrica",
+    "a": "P(X=k) = \\frac{\\binom{M}{k} \\binom{N-M}{n-k}}{\\binom{N}{n}}"
+  },
+  {
+    "q": "Varianza (Fórmula general)",
+    "a": "Var(X) = E[X^2] - (E[X])^2"
   }
 ]
