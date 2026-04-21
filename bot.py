@@ -5,22 +5,14 @@ import os
 import urllib.parse
 
 def main():
-    # 1. Cargar el JSON
     with open('flashcards.json', 'r', encoding='utf-8') as f:
         data = json.load(f)
     
     card = random.choice(data)
-    
-    # 2. Preparar la fórmula para la URL
-    # QuickLaTeX espera el LaTeX puro. Urllib.parse.quote convierte caracteres 
-    # como '\', '{', '}' en formato URL seguro.
     formula_latex = card['a']
     formula_encoded = urllib.parse.quote(formula_latex)
-    
-    # URL de la API de renderizado (se ve con calidad de imprenta)
     url_imagen = f"https://quicklatex.com/latex3.f?formula={formula_encoded}&fsize=20px&fcolor=000000&mode=0"
     
-    # 3. Enviar a Telegram como Foto
     token = os.environ.get('TELEGRAM_TOKEN')
     chat_id = os.environ.get('TELEGRAM_CHAT_ID')
     
@@ -29,11 +21,18 @@ def main():
     payload = {
         "chat_id": chat_id,
         "photo": url_imagen,
-        "caption": f"🧠 *Flashcard de Probabilidad*\n\n*Pregunta:* {card['q']}",
+        "caption": f"🧠 *Flashcard: {card['q']}*",
         "parse_mode": "Markdown"
     }
     
-    requests.post(url_telegram, data=payload)
+    response = requests.post(url_telegram, data=payload)
+    
+    # --- ESTA LÍNEA ES LA CLAVE ---
+    print(f"Status Code: {response.status_code}")
+    print(f"Respuesta de Telegram: {response.text}")
+    
+    if response.status_code != 200:
+        print("¡Error detectado! Revisa el mensaje de arriba.")
 
 if __name__ == "__main__":
     main()
