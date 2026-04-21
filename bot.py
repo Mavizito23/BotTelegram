@@ -18,10 +18,7 @@ def main():
     
     card = random.choice(data)
 
-    formula_url = urllib.parse.quote(card['a'])
-    latex_image_url = f"[https://quicklatex.com/latex3.f?formula=](https://quicklatex.com/latex3.f?formula=){formula_url}&fsize=15px&fcolor=000000"
-    
-    mensaje = f"*Flashcard del Día*\n\n*Q:* {card['q']}\n\n*A (en LaTeX):*\n{latex_image_url}"
+    mensaje = f"🧠 *Flashcard del Día*\n\n*Q:* {card['q']}\n\n*A:* `{card['a']}`"
     
     enviar_telegram(mensaje)
 
