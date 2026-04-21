@@ -1,31 +1,31 @@
 [
   {
     "q": "Axiomas de Kolmogórov (1, 2 y 3)",
-    "a": "1. P(A) ≥ 0. 2. P(Ω) = 1. 3. Aditividad numerable: P(∪Ai) = ΣP(Ai) para eventos ajenos."
+    "a": "1. P(A) \\ge 0 \\quad 2. P(\\Omega) = 1 \\quad 3. \\displaystyle P\\left(\\bigcup_{i=1}^{\\infty} A_i\\right) = \\sum_{i=1}^{\\infty} P(A_i)"
   },
   {
     "q": "Regla de adición (n=2)",
-    "a": "P(A ∪ B) = P(A) + P(B) - P(A ∩ B)"
+    "a": "P(A \\cup B) = P(A) + P(B) - P(A \\cap B)"
   },
   {
     "q": "Leyes de De Morgan",
-    "a": "(A ∪ B)^c = A^c ∩ B^c; (A ∩ B)^c = A^c ∪ B^c"
+    "a": "(A \\cup B)^c = A^c \\cap B^c; \\quad (A \\cap B)^c = A^c \\cup B^c"
   },
   {
     "q": "Definición de probabilidad condicional P(A|B)",
-    "a": "P(A|B) = P(A ∩ B) / P(B) con P(B) > 0"
+    "a": "\\displaystyle P(A|B) = \\dfrac{P(A \\cap B)}{P(B)}, \\quad P(B) > 0"
   },
   {
     "q": "Condición de independencia",
-    "a": "A y B son independientes si P(A ∩ B) = P(A)P(B)"
+    "a": "P(A \\cap B) = P(A) \\cdot P(B)"
   },
   {
     "q": "Teorema de Bayes (forma general)",
-    "a": "P(Bj|A) = [P(Bj)P(A|Bj)] / Σ[P(Bi)P(A|Bi)]"
+    "a": "\\displaystyle P(B_j|A) = \\dfrac{P(B_j)P(A|B_j)}{\\sum_{i=1}^{n} P(B_i)P(A|B_i)}"
   },
   {
     "q": "Varianza (fórmula fundamental)",
-    "a": "Var(X) = E[X^2] - (E[X])^2"
+    "a": "\\text{Var}(X) = E[X^2] - (E[X])^2"
   },
   {
     "q": "Linealidad de la esperanza",
@@ -33,90 +33,66 @@
   },
   {
     "q": "Desigualdad de Chebyshev",
-    "a": "P(|X - μ| ≥ kσ) ≤ 1/k^2"
+    "a": "\\displaystyle P(|X - \\mu| \\ge k\\sigma) \\le \\dfrac{1}{k^2}"
   },
   {
     "q": "Esperanza y Varianza de Binomial B(n,p)",
-    "a": "E[X] = np; Var(X) = np(1-p)"
+    "a": "E[X] = np, \\quad \\text{Var}(X) = np(1-p)"
   },
   {
     "q": "Esperanza de la distribución Geométrica",
-    "a": "E[X] = 1/p (ensayos hasta el primer éxito)"
+    "a": "E[X] = \\dfrac{1}{p}"
   },
   {
     "q": "Esperanza y Varianza de Poisson",
-    "a": "E[X] = λ; Var(X) = λ"
+    "a": "E[X] = \\lambda, \\quad \\text{Var}(X) = \\lambda"
   },
   {
     "q": "Esperanza y Varianza de la Exponencial",
-    "a": "E[X] = 1/λ; Var(X) = 1/λ^2"
+    "a": "\\displaystyle E[X] = \\dfrac{1}{\\lambda}, \\quad \\text{Var}(X) = \\dfrac{1}{\\lambda^2}"
   },
   {
     "q": "Propiedad de falta de memoria (Exponencial)",
-    "a": "P(X > s+t | X > s) = P(X > t)"
+    "a": "P(X > s+t \\mid X > s) = P(X > t)"
   },
   {
     "q": "Estandarización de una Normal",
-    "a": "Z = (X - μ) / σ ~ N(0,1)"
+    "a": "\\displaystyle Z = \\dfrac{X - \\mu}{\\sigma} \\sim N(0,1)"
   },
   {
     "q": "Teorema Central del Límite (TCL)",
-    "a": "La suma de n variables i.i.d. converge a una Normal(μ, σ^2/n) cuando n → ∞"
+    "a": "\\displaystyle \\dfrac{\\bar{X}_n - \\mu}{\\sigma/\\sqrt{n}} \\xrightarrow{d} N(0,1)"
   },
   {
     "q": "PMF Binomial B(n,p)",
-    "a": "P(X=k) = \\binom{n}{k} p^k (1-p)^{n-k}"
-  },
-  {
-    "q": "Esperanza y Varianza Binomial",
-    "a": "E[X] = np; Var(X) = np(1-p)"
+    "a": "\\displaystyle P(X=k) = \\binom{n}{k} p^k (1-p)^{n-k}"
   },
   {
     "q": "PMF Poisson P(λ)",
-    "a": "P(X=k) = \\frac{e^{-\\lambda} \\lambda^k}{k!}"
-  },
-  {
-    "q": "Esperanza y Varianza Poisson",
-    "a": "E[X] = \\lambda; Var(X) = \\lambda"
+    "a": "\\displaystyle P(X=k) = \\dfrac{e^{-\\lambda} \\lambda^k}{k!}"
   },
   {
     "q": "PMF Geométrica G(p)",
     "a": "P(X=k) = (1-p)^{k-1} p"
   },
   {
-    "q": "Esperanza y Varianza Geométrica",
-    "a": "E[X] = 1/p; Var(X) = (1-p)/p^2"
-  },
-  {
     "q": "PDF Uniforme Continua U(a,b)",
-    "a": "f(x) = 1/(b-a) para a < x < b"
+    "a": "\\displaystyle f(x) = \\dfrac{1}{b-a}, \\quad a < x < b"
   },
   {
     "q": "Esperanza y Varianza Uniforme",
-    "a": "E[X] = (a+b)/2; Var(X) = (b-a)^2 / 12"
+    "a": "\\displaystyle E[X] = \\dfrac{a+b}{2}, \\quad \\text{Var}(X) = \\dfrac{(b-a)^2}{12}"
   },
   {
     "q": "PDF Exponencial Exp(λ)",
-    "a": "f(x) = \\lambda e^{-\\lambda x} para x > 0"
-  },
-  {
-    "q": "Esperanza y Varianza Exponencial",
-    "a": "E[X] = 1/\\lambda; Var(X) = 1/\\lambda^2"
+    "a": "f(x) = \\lambda e^{-\\lambda x}, \\quad x > 0"
   },
   {
     "q": "PDF Normal N(μ, σ²)",
-    "a": "f(x) = \\frac{1}{\\sqrt{2\\pi\\sigma^2}} e^{-\\frac{(x-\\mu)^2}{2\\sigma^2}}"
-  },
-  {
-    "q": "Esperanza y Varianza Normal",
-    "a": "E[X] = \\mu; Var(X) = \\sigma^2"
+    "a": "\\displaystyle f(x) = \\dfrac{1}{\\sqrt{2\\pi\\sigma^2}} e^{-\\frac{(x-\\mu)^2}{2\\sigma^2}}"
   },
   {
     "q": "PMF Hipergeométrica",
-    "a": "P(X=k) = \\frac{\\binom{M}{k} \\binom{N-M}{n-k}}{\\binom{N}{n}}"
-  },
-  {
-    "q": "Varianza (Fórmula general)",
-    "a": "Var(X) = E[X^2] - (E[X])^2"
+    "a": "\\displaystyle P(X=k) = \\dfrac{\\binom{M}{k} \\binom{N-M}{n-k}}{\\binom{N}{n}}"
   }
 ]
