@@ -3,7 +3,7 @@ name: Enviar Flashcard Diario
 on:
   schedule:
     # 0 14 * * * significa 14:00 UTC (8:00 AM en Ciudad de México, CST)
-    - cron: '0 14 * * *'
+    - cron: '0 * * * *'
   workflow_dispatch: # Esto permite ejecutarlo manualmente para probar desde GitHub
 
 jobs:
